@@ -6,13 +6,13 @@ pipeline {
     }
 
     stages{
-        stage('Check & remove container'){
+        stage('Check and remove container'){
             steps{
                 script{
-                    def containerExists = sh(script: "docker ps -q -f name=ajju", returnStdout: true).trim()
+                    def containerExists = sh(script: "docker ps -q -f name=ajju1", returnStdout: true).trim()
                     if (containerExists) {
-                    sh "docker stop ajju"
-                    sh "docker rm ajju"
+                    sh "docker stop ajju1"
+                    sh "docker rm ajju1"
                     }
                 }
             }
@@ -50,7 +50,7 @@ pipeline {
         }
         stage('Run a container'){
             steps{
-                sh 'docker run -it -d --name ajju -p 8081:8080 ajith724/docker1'
+                sh 'docker run -it -d --name ajju1 -p 8081:8080 ajith724/docker1'
             }
         }
     }
@@ -59,7 +59,7 @@ pipeline {
             echo 'Deployment successful'
         }
         failure {
-            sh 'docker rm -f ajju'
+            sh 'docker rm -f ajju1'
         }
         always{
             echo 'Deployed'
