@@ -1,85 +1,203 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Zepto HomePage</title>
-  <script src="https://cdn.tailwindcss.com"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Home</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: powderblue;
+            color: #333;
+        }
+
+        header {
+            background-color: #24292e;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        nav {
+            background-color: #0366d6;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            padding: 10px;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s;
+        }
+
+        nav a:hover {
+            background-color: #024a9c;
+        }
+
+        .hero {
+            background: url('https://via.placeholder.com/1200x400') no-repeat center center/cover;
+            color: white;
+            text-align: center;
+            padding: 80px 20px;
+            position: relative;
+        }
+
+        .hero::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+        }
+
+        .hero h1 {
+            font-size: 3em;
+            margin: 0;
+        }
+
+        .hero p {
+            font-size: 1.2em;
+            margin: 10px 0 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: #ff9800;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s;
+        }
+
+        .btn:hover {
+            background-color: #e68900;
+        }
+
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            padding: 20px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        .card h2 {
+            color: #0366d6;
+        }
+
+        .features {
+            background-color: #e0f7fa;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .tools {
+            background-color: #f1f1f1;
+            padding: 40px 20px;
+            text-align: center;
+        }
+
+        .tool-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+        }
+
+        .tool-item img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+    </style>
 </head>
-<body class="min-h-screen bg-gray-100">
-  <!-- Header -->
-  <header class="bg-white shadow p-4 sticky top-0 z-10">
-    <div class="container mx-auto flex justify-between items-center">
-      <h1 class="text-2xl font-bold text-green-600">Zepto</h1>
-      <nav class="space-x-4">
-        <button class="bg-transparent hover:bg-gray-200 px-4 py-2 rounded">Home</button>
-        <button class="bg-transparent hover:bg-gray-200 px-4 py-2 rounded">Products</button>
-        <button class="bg-transparent hover:bg-gray-200 px-4 py-2 rounded">About</button>
-        <button class="bg-transparent hover:bg-gray-200 px-4 py-2 rounded">Contact</button>
-      </nav>
-    </div>
-  </header>
+<body>
+    <header>
+        <h1>DevOps Dashboard</h1>
+    </header>
 
-  <!-- Hero Section -->
-  <section class="bg-green-600 text-white py-16">
-    <div class="container mx-auto text-center">
-      <h2 class="text-4xl font-bold mb-4">Groceries delivered in minutes</h2>
-      <p class="mb-6">Get your daily essentials delivered to your doorstep quickly and hassle-free.</p>
-      <button class="bg-white text-green-600 px-6 py-2 rounded-lg">Shop Now</button>
-    </div>
-  </section>
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">About</a>
+        <a href="#">Services</a>
+        <a href="#">Contact</a>
+    </nav>
 
-  <!-- Featured Products -->
-  <section class="py-12">
-    <div class="container mx-auto">
-      <h3 class="text-2xl font-bold text-center mb-6">Featured Products</h3>
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        <div class="bg-white shadow rounded-lg">
-          <img src="https://b.zmtcdn.com/data/pictures/chains/9/51139/6b176f80af05e21cfb5af3c2ff7c82b4_featured_v2.jpg" alt="Product 1" class="w-full rounded-t-lg">
-          <div class="p-4 text-center">
-            <h4 class="text-lg font-bold">Product 1</h4>
-            <p class="text-gray-600">100rs</p>
-            <button class="mt-2 w-full bg-green-600 text-white px-4 py-2 rounded">Add to Cart</button>
-          </div>
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Streamline Your Development Process</h1>
+            <p>Integrate, Deploy, and Scale with ease.</p>
+            <a href="#" class="btn">Get Started</a>
         </div>
-        <div class="bg-white shadow rounded-lg">
-          <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE1tpexf_lqa9lmwDfY67WDDdijTV_PoAAGg&s" alt="Product 2" class="w-full rounded-t-lg">
-          <div class="p-4 text-center">
-            <h4 class="text-lg font-bold">Product 2</h4>
-            <p class="text-gray-600">30rs</p>
-            <button class="mt-2 w-full bg-green-600 text-white px-4 py-2 rounded">Add to Cart</button>
-          </div>
-        </div>
-        <div class="bg-white shadow rounded-lg">
-          <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEh0_tbrJhFqRBvlE7U2ICxmKMfmAS80QxP_naYKScnbLyK_zrqKmX7dRX5KbrHRUV0zhJE7OcXxrbn-phcibPiCD5rG5_S2dBiJrBfKgB1SxheGEdBFd_VfFOqFR9BPQqnp_ZIeWgtpX8L6/s1600/DSC07710.JPG" alt="Product 3" class="w-full rounded-t-lg">
-          <div class="p-4 text-center">
-            <h4 class="text-lg font-bold">Product 3</h4>
-            <p class="text-gray-600">500rs</p>
-            <button class="mt-2 w-full bg-green-600 text-white px-4 py-2 rounded">Add to Cart</button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- Categories -->
-  <section class="bg-gray-200 py-12">
-    <div class="container mx-auto">
-      <h3 class="text-2xl font-bold text-center mb-6">Shop by Categories</h3>
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
-        <div class="bg-white p-4 rounded-lg shadow text-center text-green-600 font-bold">Fruits</div>
-        <div class="bg-white p-4 rounded-lg shadow text-center text-green-600 font-bold">Vegetables</div>
-        <div class="bg-white p-4 rounded-lg shadow text-center text-green-600 font-bold">Dairy</div>
-        <div class="bg-white p-4 rounded-lg shadow text-center text-green-600 font-bold">Snacks</div>
-      </div>
-    </div>
-  </section>
+    <section class="tools">
+        <h2>Essential DevOps Tools</h2>
+        <div class="tool-list">
+            <div class="tool-item">
+                <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git Logo">
+                <h3>Git & GitHub</h3>
+            </div>
+            <div class="tool-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/5/52/Apache_Maven_logo.svg" alt="Maven Logo">
+                <h3>Maven</h3>
+            </div>
+            <div class="tool-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Jenkins_logo.svg" alt="Jenkins Logo">
+                <h3>Jenkins</h3>
+            </div>
+            <div class="tool-item">
+                <img src="https://www.docker.com/wp-content/uploads/2022/03/Moby-logo.png" alt="Docker Logo">
+                <h3>Docker</h3>
+            </div>
+            <div class="tool-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/2/24/Ansible_logo.svg" alt="Ansible Logo">
+                <h3>Ansible</h3>
+            </div>
+            <div class="tool-item">
+                <img src="https://xebia.com/wp-content/uploads/2024/04/learning-terraform-Terraform-AWS.jpg.webp" alt="Terraform Logo">
+                <h3>Terraform</h3>
+            </div>
+            <div class="tool-item">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/3/39/Kubernetes_logo_without_workmark.svg" alt="Kubernetes Logo">
+                <h3>Kubernetes</h3>
+            </div>
+        </div>
+    </section>
 
-  <!-- Footer -->
-  <footer class="bg-white py-6 mt-12 shadow">
-    <div class="container mx-auto text-center">
-      <p class="text-gray-600">&copy; 2025 Zepto. All Rights Reserved.</p>
-    </div>
-  </footer>
+    <footer>
+        <p>&copy; 2025 DevOps Solutions. All rights reserved.</p>
+    </footer>
 </body>
 </html>
