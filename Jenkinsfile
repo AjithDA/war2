@@ -24,18 +24,18 @@ pipeline {
         }
         stage('Create image'){
             steps{
-                sh 'sudo docker build -t app /var/lib/jenkins/workspace/job/'
+                sh 'sudo docker build -t app /var/lib/jenkins/workspace/job1/'
             }
         }
         stage('Assign tag'){
             steps{
-                sh 'docker tag app ajith724/docker'
+                sh 'docker tag app ajith724/docker1'
             }
         }
         stage('Push to dockerhub'){
             steps{
                 sh 'echo "ajith123456" | docker login -u "ajith724" --password-stdin'
-                sh 'docker push ajith724/docker'
+                sh 'docker push ajith724/docker1'
             }
         }
         stage('Remove images'){
@@ -45,12 +45,12 @@ pipeline {
         }
         stage('Pull image from DockerHub'){
             steps{
-                sh 'docker pull ajith724/docker'
+                sh 'docker pull ajith724/docker1'
             }
         }
         stage('Run a container'){
             steps{
-                sh 'docker run -it -d --name ajju -p 8081:8080 ajith724/docker'
+                sh 'docker run -it -d --name ajju -p 8081:8080 ajith724/docker1'
             }
         }
     }
