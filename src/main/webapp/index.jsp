@@ -163,7 +163,7 @@
     </section>
 
     <section class="tools">
-        <h2>Essential DevOps Tools</h2>
+        <h3>Essential DevOps Tools</h3>
         <div class="tool-list">
             <div class="tool-item">
                 <img src="https://git-scm.com/images/logos/downloads/Git-Icon-1788C.png" alt="Git Logo">
